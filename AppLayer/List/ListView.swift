@@ -14,6 +14,11 @@ struct ListView: View {
         if presenter.isLoading {
             LottieView(animation: .named("Workout"))
                 .playing(loopMode: .loop)
+                .onAppear {
+                    presenter.loadWorkouts()
+                }
+        } else {
+            // show list
         }
     }
 }

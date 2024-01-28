@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol WorkoutListUseCase {
+    func loadWorkouts() async -> [Workout]
+}

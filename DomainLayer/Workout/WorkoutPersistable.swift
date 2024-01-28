@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+protocol WorkoutPersistable {
+    func save(workouts: [Workout])
+    func load(id: Int) -> Workout
+}
