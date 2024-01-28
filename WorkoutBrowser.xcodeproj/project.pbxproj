@@ -235,8 +235,8 @@
 		DF03D7E62B6557920093AD55 /* Workout */ = {
 			isa = PBXGroup;
 			children = (
-				DF03D7E72B6557A70093AD55 /* WorkoutEntity.swift */,
 				DF03D7ED2B6557CF0093AD55 /* WorkoutDetailUseCase.swift */,
+				DF03D7E72B6557A70093AD55 /* WorkoutEntity.swift */,
 				DF03D7E92B6557B50093AD55 /* WorkoutInteractor.swift */,
 				DF03D7EB2B6557C40093AD55 /* WorkoutListUseCase.swift */,
 				DF03D7FC2B657D810093AD55 /* WorkoutPersistable.swift */,
@@ -248,10 +248,10 @@
 		DF03D7F52B6558360093AD55 /* Workout */ = {
 			isa = PBXGroup;
 			children = (
-				DF03D7F62B65584B0093AD55 /* WorkoutProvider.swift */,
+				DF03D8132B66785B0093AD55 /* String+HTML.swift */,
 				DF03D7F82B6558560093AD55 /* WorkoutInfoResponse.swift */,
 				DF03D7FE2B657D940093AD55 /* WorkoutPersistence.swift */,
-				DF03D8132B66785B0093AD55 /* String+HTML.swift */,
+				DF03D7F62B65584B0093AD55 /* WorkoutProvider.swift */,
 			);
 			path = Workout;
 			sourceTree = "<group>";

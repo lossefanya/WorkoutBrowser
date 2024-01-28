@@ -11,16 +11,16 @@ final class DetailPresenter {
     enum Content {
         case description(AttributedString)
         case images([String])
-        case variants([WorkoutEntity])
+        case variations([WorkoutEntity])
     }
-    let isVariant: Bool
+    let isVariation: Bool
     let useCase: WorkoutDetailUseCase
     let workout: WorkoutEntity
     @Published var contents: [Content] = []
     
-    init(workout: WorkoutEntity, isVariant: Bool = false, useCase: WorkoutDetailUseCase) {
+    init(workout: WorkoutEntity, isVariation: Bool = false, useCase: WorkoutDetailUseCase) {
         self.workout = workout
-        self.isVariant = isVariant
+        self.isVariation = isVariation
         self.useCase = useCase
         
         var contents: [Content] = [.description(workout.description)]
@@ -28,19 +28,23 @@ final class DetailPresenter {
             contents.append(.images(workout.images))
         }
         self.contents = contents
+        
+        if !isVariation, workout.variations.count > 0 {
+            loadVariations()
+        }
     }
     
-    func loadDetail(id: Int) {
+    func loadVariations() {
         Task {
-            let result = await useCase.loadWorkout(id: id)
-            switch result {
-            case .success(let workout):
-                DispatchQueue.main.async { [weak self] in
-                    
+            var variations: [WorkoutEntity] = []
+            for id in workout.variations {
+                let result = await useCase.loadWorkout(id: id)
+                if case let .success(workoutEntity) = result {
+                    variations.append(workoutEntity)
                 }
-            case .failure(let error):
-                break
             }
+            
+            contents = contents + [.variations(variations)]
         }
     }
 }
@@ -50,7 +54,7 @@ extension DetailPresenter.Content {
         switch self {
         case .description: return "Description"
         case .images: return "Images"
-        case .variants: return "Variants"
+        case .variations: return "Variations"
         }
     }
 }

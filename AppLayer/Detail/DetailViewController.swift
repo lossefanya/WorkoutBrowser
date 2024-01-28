@@ -16,7 +16,9 @@ class DetailViewController: UITableViewController {
         self.presenter = presenter
         presenter.$contents
             .sink { [weak self] contents in
-                self?.tableView.reloadData()
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
             }
             .store(in: &cancellables)
     }
@@ -44,7 +46,7 @@ class DetailViewController: UITableViewController {
         switch content {
         case .description: return 1
         case .images(let images): return images.count
-        case .variants(let workouts): return workouts.count
+        case .variations(let workouts): return workouts.count
         }
     }
 
@@ -64,7 +66,7 @@ class DetailViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: ImageCell.identifier, for: indexPath) as! ImageCell
             cell.pictureView.kf.setImage(with: URL(string: imageUrlString), placeholder: UIImage(systemName: "dumbbell"))
             return cell
-        case .variants(let variants):
+        case .variations(let variants):
             let variant = variants[indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: UITableViewCell.identifier, for: indexPath)
             cell.textLabel?.text = variant.name
