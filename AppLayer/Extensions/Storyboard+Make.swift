@@ -13,6 +13,7 @@ extension Identifiable {
 }
 
 extension UIViewController: Identifiable {}
+extension UITableViewCell: Identifiable {}
 
 extension UIViewController {
     static func make() -> Self? {

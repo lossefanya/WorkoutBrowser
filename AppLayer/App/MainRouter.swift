@@ -7,20 +7,49 @@
 
 import UIKit
 
+protocol DetailRoutable: AnyObject {
+    func showDetail(for workout: WorkoutEntity, isVariation: Bool)
+}
+
 final class MainRouter {
-    let navigation = UINavigationController()
+    let navigation: UINavigationController
+    let dependencyInjector: DependencyInjector
+    
+    init(
+        navigation: UINavigationController = UINavigationController(),
+        dependencyInjector: DependencyInjector
+    ) {
+        self.navigation = navigation
+        self.dependencyInjector = dependencyInjector
+    }
     
     func start() {
-        let provider = WorkoutProvider()
-        let persistence = WorkoutPersistence()
-        let useCase = WorkoutInteractor(
-            provider: provider,
-            persistence: persistence
-        )
-        let presenter = ListPresenter(listUseCase: useCase)
+        guard let useCase = dependencyInjector.resolveDependency(WorkoutListUseCase.self) else {
+            assertionFailure("DEV: Please check dependency registration")
+            return
+        }
+        let presenter = ListPresenter(listUseCase: useCase, router: self)
         let view = ListView(presenter: presenter).hosting
         view.navigationItem.title = "Workouts"
         navigation.pushViewController(view, animated: false)
     }
+    
+}
+
+extension MainRouter: DetailRoutable {
+    func showDetail(for workout: WorkoutEntity, isVariation: Bool) {
+        guard let useCase = dependencyInjector.resolveDependency(WorkoutDetailUseCase.self) else {
+            assertionFailure("DEV: Please check dependency registration")
+            return
+        }
+        guard let view = DetailViewController.make() else {
+            assertionFailure("DEV: Please check DetailViewController storyboard")
+            return
+        }
+        let presenter = DetailPresenter(workout: workout, isVariant: isVariation, useCase: useCase)
+        view.bind(presenter: presenter)
+        navigation.pushViewController(view, animated: true)
+    }
+    
     
 }

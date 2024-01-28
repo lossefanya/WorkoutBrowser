@@ -6,24 +6,25 @@
 //
 
 import Foundation
-import Down
 
 extension String {
     var asAttributedString: AttributedString {
-        if let percentRemoved = removingPercentEncoding, var htmlString = try? Down(markdownString: percentRemoved).toHTML() {
-            htmlString = String.htmlTemplate.replacingOccurrences(of: "${html}", with: htmlString)
-            if let htmlData = htmlString.data(using: .utf8) {
-                let attributedString = try? NSAttributedString(
-                    data: htmlData,
-                    options: [.documentType: NSAttributedString.DocumentType.html],
-                    documentAttributes: nil
-                )
-                if let attributedString = attributedString {
-                    return AttributedString(attributedString)
-                }
-            }
+        guard
+            let percentRemoved = removingPercentEncoding,
+            let htmlData = percentRemoved.asHTML.data(using: .utf8),
+            let attributedString = try? NSAttributedString(
+                data: htmlData,
+                options: [.documentType: NSAttributedString.DocumentType.html],
+                documentAttributes: nil
+            )
+        else {
+            return AttributedString(self)
         }
-        return AttributedString(self)
+        return AttributedString(attributedString)
+    }
+    
+    var asHTML: String {
+        return String.htmlTemplate.replacingOccurrences(of: "${html}", with: self)
     }
     
     private static let htmlTemplate = """

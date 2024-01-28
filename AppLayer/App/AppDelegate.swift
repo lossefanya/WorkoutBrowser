@@ -11,9 +11,10 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let mainRouter = MainRouter()
+    let mainRouter = MainRouter(dependencyInjector: DependencyInjector.shared)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        DependencyInjector.shared.registerDependencies()
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = mainRouter.navigation
         self.window?.makeKeyAndVisible()

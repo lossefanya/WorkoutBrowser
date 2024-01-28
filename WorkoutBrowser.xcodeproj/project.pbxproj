@@ -32,8 +32,10 @@
 		DF03D8012B657DAF0093AD55 /* DependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D8002B657DAF0093AD55 /* DependencyInjector.swift */; };
 		DF03D8042B665BF80093AD55 /* View+HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D8032B665BF80093AD55 /* View+HostingController.swift */; };
 		DF03D8062B665D350093AD55 /* Storyboard+Make.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D8052B665D350093AD55 /* Storyboard+Make.swift */; };
-		DF03D8122B6675040093AD55 /* Down in Frameworks */ = {isa = PBXBuildFile; productRef = DF03D8112B6675040093AD55 /* Down */; };
 		DF03D8142B66785C0093AD55 /* String+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D8132B66785B0093AD55 /* String+HTML.swift */; };
+		DF03D8162B66A5600093AD55 /* DetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF03D8152B66A5600093AD55 /* DetailViewController.storyboard */; };
+		DF03D8182B66A5C10093AD55 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D8172B66A5C10093AD55 /* DetailViewController.swift */; };
+		DF03D81B2B66B7070093AD55 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DF03D81A2B66B7070093AD55 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		DF03D8052B665D350093AD55 /* Storyboard+Make.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard+Make.swift"; sourceTree = "<group>"; };
 		DF03D8072B6662740093AD55 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF03D8132B66785B0093AD55 /* String+HTML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+HTML.swift"; sourceTree = "<group>"; };
+		DF03D8152B66A5600093AD55 /* DetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailViewController.storyboard; sourceTree = "<group>"; };
+		DF03D8172B66A5C10093AD55 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF03D8122B6675040093AD55 /* Down in Frameworks */,
+				DF03D81B2B66B7070093AD55 /* Kingfisher in Frameworks */,
 				DF03D7D72B654B6B0093AD55 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,6 +226,8 @@
 			isa = PBXGroup;
 			children = (
 				DF03D7F12B6558070093AD55 /* DetailPresenter.swift */,
+				DF03D8152B66A5600093AD55 /* DetailViewController.storyboard */,
+				DF03D8172B66A5C10093AD55 /* DetailViewController.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -277,7 +283,7 @@
 			name = WorkoutBrowser;
 			packageProductDependencies = (
 				DF03D7D62B654B6B0093AD55 /* Lottie */,
-				DF03D8112B6675040093AD55 /* Down */,
+				DF03D81A2B66B7070093AD55 /* Kingfisher */,
 			);
 			productName = WorkoutBrowser;
 			productReference = DF03D7A22B654B100093AD55 /* WorkoutBrowser.app */;
@@ -353,7 +359,7 @@
 			mainGroup = DF03D7992B654B100093AD55;
 			packageReferences = (
 				DF03D7D52B654B6B0093AD55 /* XCRemoteSwiftPackageReference "lottie-spm" */,
-				DF03D8102B6675040093AD55 /* XCRemoteSwiftPackageReference "Down" */,
+				DF03D8192B66B7060093AD55 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = DF03D7A32B654B100093AD55 /* Products */;
 			projectDirPath = "";
@@ -373,6 +379,7 @@
 			files = (
 				DF03D7B22B654B120093AD55 /* LaunchScreen.storyboard in Resources */,
 				DF03D7AF2B654B120093AD55 /* Assets.xcassets in Resources */,
+				DF03D8162B66A5600093AD55 /* DetailViewController.storyboard in Resources */,
 				DF03D7E32B6557290093AD55 /* Dumbbell.json in Resources */,
 				DF03D7D92B654BF10093AD55 /* Workout.json in Resources */,
 			);
@@ -409,6 +416,7 @@
 				DF03D7F22B6558070093AD55 /* DetailPresenter.swift in Sources */,
 				DF03D7E52B6557840093AD55 /* MainRouter.swift in Sources */,
 				DF03D7A62B654B100093AD55 /* AppDelegate.swift in Sources */,
+				DF03D8182B66A5C10093AD55 /* DetailViewController.swift in Sources */,
 				DF03D8062B665D350093AD55 /* Storyboard+Make.swift in Sources */,
 				DF03D7EE2B6557CF0093AD55 /* WorkoutDetailUseCase.swift in Sources */,
 				DF03D7FB2B655A2A0093AD55 /* ListView.swift in Sources */,
@@ -763,12 +771,12 @@
 				version = 4.4.0;
 			};
 		};
-		DF03D8102B6675040093AD55 /* XCRemoteSwiftPackageReference "Down" */ = {
+		DF03D8192B66B7060093AD55 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/johnxnguyen/Down";
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
 			requirement = {
 				kind = exactVersion;
-				version = 0.11.0;
+				version = 7.10.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -779,10 +787,10 @@
 			package = DF03D7D52B654B6B0093AD55 /* XCRemoteSwiftPackageReference "lottie-spm" */;
 			productName = Lottie;
 		};
-		DF03D8112B6675040093AD55 /* Down */ = {
+		DF03D81A2B66B7070093AD55 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DF03D8102B6675040093AD55 /* XCRemoteSwiftPackageReference "Down" */;
-			productName = Down;
+			package = DF03D8192B66B7060093AD55 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

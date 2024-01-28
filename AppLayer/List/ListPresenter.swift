@@ -7,15 +7,17 @@
 
 import Foundation
 
-class ListPresenter: ObservableObject {
+final class ListPresenter: ObservableObject {
     @Published var isLoading: Bool
     @Published var workouts: [WorkoutEntity]
-    let listUseCase: WorkoutListUseCase
+    private let listUseCase: WorkoutListUseCase
+    private weak var router: DetailRoutable?
     
-    init(isLoading: Bool = true, workouts: [WorkoutEntity] = [], listUseCase: WorkoutListUseCase) {
+    init(isLoading: Bool = true, workouts: [WorkoutEntity] = [], listUseCase: WorkoutListUseCase, router: DetailRoutable? = nil) {
         self.isLoading = isLoading
         self.workouts = workouts
         self.listUseCase = listUseCase
+        self.router = router
     }
     
     func loadWorkouts() {
@@ -24,8 +26,10 @@ class ListPresenter: ObservableObject {
             try? await Task.sleep(nanoseconds: 1_000_000_000) // to show animation little bit
             switch result {
             case .success(let workouts):
-                self.workouts = workouts
-                isLoading = false
+                DispatchQueue.main.async { [weak self] in
+                    self?.workouts = workouts
+                    self?.isLoading = false
+                }
             case .failure(let error):
                 break
             }
@@ -33,7 +37,7 @@ class ListPresenter: ObservableObject {
     }
     
     func select(workout: WorkoutEntity) {
-        
+        router?.showDetail(for: workout, isVariation: false)
     }
 }
 
