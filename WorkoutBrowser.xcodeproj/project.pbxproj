@@ -32,9 +32,6 @@
 		DF03D8012B657DAF0093AD55 /* DependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D8002B657DAF0093AD55 /* DependencyInjector.swift */; };
 		DF03D8042B665BF80093AD55 /* View+HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D8032B665BF80093AD55 /* View+HostingController.swift */; };
 		DF03D8062B665D350093AD55 /* Storyboard+Make.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D8052B665D350093AD55 /* Storyboard+Make.swift */; };
-		DF03D80A2B66649A0093AD55 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D8092B66649A0093AD55 /* IntroViewController.swift */; };
-		DF03D80D2B6664A20093AD55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF03D80B2B6664A20093AD55 /* Main.storyboard */; };
-		DF03D80F2B6664F20093AD55 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D80E2B6664F10093AD55 /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,9 +80,6 @@
 		DF03D8032B665BF80093AD55 /* View+HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+HostingController.swift"; sourceTree = "<group>"; };
 		DF03D8052B665D350093AD55 /* Storyboard+Make.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard+Make.swift"; sourceTree = "<group>"; };
 		DF03D8072B6662740093AD55 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DF03D8092B66649A0093AD55 /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
-		DF03D80C2B6664A20093AD55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DF03D80E2B6664F10093AD55 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,7 +182,6 @@
 				DF03D7A52B654B100093AD55 /* AppDelegate.swift */,
 				DF03D8002B657DAF0093AD55 /* DependencyInjector.swift */,
 				DF03D7E42B6557840093AD55 /* MainRouter.swift */,
-				DF03D80E2B6664F10093AD55 /* SceneDelegate.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -207,9 +200,7 @@
 		DF03D7DE2B6554DB0093AD55 /* Intro */ = {
 			isa = PBXGroup;
 			children = (
-				DF03D8092B66649A0093AD55 /* IntroViewController.swift */,
 				DF03D7B02B654B120093AD55 /* LaunchScreen.storyboard */,
-				DF03D80B2B6664A20093AD55 /* Main.storyboard */,
 			);
 			path = Intro;
 			sourceTree = "<group>";
@@ -374,7 +365,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF03D7B22B654B120093AD55 /* LaunchScreen.storyboard in Resources */,
-				DF03D80D2B6664A20093AD55 /* Main.storyboard in Resources */,
 				DF03D7AF2B654B120093AD55 /* Assets.xcassets in Resources */,
 				DF03D7E32B6557290093AD55 /* Dumbbell.json in Resources */,
 				DF03D7D92B654BF10093AD55 /* Workout.json in Resources */,
@@ -411,14 +401,12 @@
 				DF03D7F42B65582E0093AD55 /* WorkoutProvidable.swift in Sources */,
 				DF03D7F22B6558070093AD55 /* DetailPresenter.swift in Sources */,
 				DF03D7E52B6557840093AD55 /* MainRouter.swift in Sources */,
-				DF03D80A2B66649A0093AD55 /* IntroViewController.swift in Sources */,
 				DF03D7A62B654B100093AD55 /* AppDelegate.swift in Sources */,
 				DF03D8062B665D350093AD55 /* Storyboard+Make.swift in Sources */,
 				DF03D7EE2B6557CF0093AD55 /* WorkoutDetailUseCase.swift in Sources */,
 				DF03D7FB2B655A2A0093AD55 /* ListView.swift in Sources */,
 				DF03D7FD2B657D810093AD55 /* WorkoutPersistable.swift in Sources */,
 				DF03D7E82B6557A70093AD55 /* Workout.swift in Sources */,
-				DF03D80F2B6664F20093AD55 /* SceneDelegate.swift in Sources */,
 				DF03D8012B657DAF0093AD55 /* DependencyInjector.swift in Sources */,
 				DF03D7EC2B6557C40093AD55 /* WorkoutListUseCase.swift in Sources */,
 			);
@@ -463,14 +451,6 @@
 				DF03D7B12B654B120093AD55 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		DF03D80B2B6664A20093AD55 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DF03D80C2B6664A20093AD55 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

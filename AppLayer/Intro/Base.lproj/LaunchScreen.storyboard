@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Intro" translatesAutoresizingMaskIntoConstraints="NO" id="iAX-Qr-u3g">
-                                <rect key="frame" x="0.0" y="229.66666666666663" width="393" height="393"/>
+                                <rect key="frame" x="0.0" y="261.66666666666669" width="393" height="393.00000000000006"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="iAX-Qr-u3g" secondAttribute="height" multiplier="1:1" id="Nzy-W3-tHg"/>
                                 </constraints>
@@ -30,7 +30,7 @@
                             <constraint firstItem="iAX-Qr-u3g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1fd-QQ-Xp6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iAX-Qr-u3g" secondAttribute="trailing" id="3Ge-U7-6fc"/>
                             <constraint firstItem="iAX-Qr-u3g" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="T2V-ha-DN1"/>
-                            <constraint firstItem="iAX-Qr-u3g" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="te9-i5-MTJ"/>
+                            <constraint firstItem="iAX-Qr-u3g" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="32" id="te9-i5-MTJ"/>
                         </constraints>
                     </view>
                 </viewController>
