@@ -8,6 +8,11 @@
 import Foundation
 
 protocol WorkoutProvidable {
-    func loadWorkouts() async -> [WorkoutEntity]
-    func loadWorkout(id: Int) async -> WorkoutEntity
+    func loadWorkouts() async -> Result<[WorkoutEntity], Error>
+    func loadWorkout(id: Int) async -> Result<WorkoutEntity, Error>
+}
+
+enum WorkoutProvidableError: Error {
+    case invalidURL
+    case parsingFailure
 }

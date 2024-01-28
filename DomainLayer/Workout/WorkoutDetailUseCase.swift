@@ -8,5 +8,5 @@
 import Foundation
 
 protocol WorkoutDetailUseCase {
-    func loadWorkout(id: Int) async -> WorkoutEntity
+    func loadWorkout(id: Int) async -> Result<WorkoutEntity, Error>
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class WorkoutInteractor {
+actor WorkoutInteractor {
     let provider: WorkoutProvidable
     let persistence: WorkoutPersistable
     
@@ -18,13 +18,13 @@ final class WorkoutInteractor {
 }
 
 extension WorkoutInteractor: WorkoutListUseCase {
-    func loadWorkouts() async -> [WorkoutEntity] {
-        return []
+    func loadWorkouts() async -> Result<[WorkoutEntity], Error> {
+        return await provider.loadWorkouts()
     }
 }
 
 extension WorkoutInteractor: WorkoutDetailUseCase {
-    func loadWorkout(id: Int) async -> WorkoutEntity {
-        return WorkoutEntity(id: 0, name: "", uuid: "", description: "", images: [], variations: [])
+    func loadWorkout(id: Int) async -> Result<WorkoutEntity, Error> {
+        return await provider.loadWorkout(id: id)
     }
 }

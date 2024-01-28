@@ -25,7 +25,7 @@
 		DF03D7F22B6558070093AD55 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D7F12B6558070093AD55 /* DetailPresenter.swift */; };
 		DF03D7F42B65582E0093AD55 /* WorkoutProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D7F32B65582E0093AD55 /* WorkoutProvidable.swift */; };
 		DF03D7F72B65584B0093AD55 /* WorkoutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D7F62B65584B0093AD55 /* WorkoutProvider.swift */; };
-		DF03D7F92B6558560093AD55 /* WorkoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D7F82B6558560093AD55 /* WorkoutResponse.swift */; };
+		DF03D7F92B6558560093AD55 /* WorkoutInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D7F82B6558560093AD55 /* WorkoutInfoResponse.swift */; };
 		DF03D7FB2B655A2A0093AD55 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D7FA2B655A2A0093AD55 /* ListView.swift */; };
 		DF03D7FD2B657D810093AD55 /* WorkoutPersistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D7FC2B657D810093AD55 /* WorkoutPersistable.swift */; };
 		DF03D7FF2B657D940093AD55 /* WorkoutPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D7FE2B657D940093AD55 /* WorkoutPersistence.swift */; };
@@ -74,7 +74,7 @@
 		DF03D7F12B6558070093AD55 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		DF03D7F32B65582E0093AD55 /* WorkoutProvidable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutProvidable.swift; sourceTree = "<group>"; };
 		DF03D7F62B65584B0093AD55 /* WorkoutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutProvider.swift; sourceTree = "<group>"; };
-		DF03D7F82B6558560093AD55 /* WorkoutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutResponse.swift; sourceTree = "<group>"; };
+		DF03D7F82B6558560093AD55 /* WorkoutInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutInfoResponse.swift; sourceTree = "<group>"; };
 		DF03D7FA2B655A2A0093AD55 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		DF03D7FC2B657D810093AD55 /* WorkoutPersistable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPersistable.swift; sourceTree = "<group>"; };
 		DF03D7FE2B657D940093AD55 /* WorkoutPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPersistence.swift; sourceTree = "<group>"; };
@@ -243,7 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				DF03D7F62B65584B0093AD55 /* WorkoutProvider.swift */,
-				DF03D7F82B6558560093AD55 /* WorkoutResponse.swift */,
+				DF03D7F82B6558560093AD55 /* WorkoutInfoResponse.swift */,
 				DF03D7FE2B657D940093AD55 /* WorkoutPersistence.swift */,
 				DF03D8132B66785B0093AD55 /* String+HTML.swift */,
 			);
@@ -399,7 +399,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF03D7F92B6558560093AD55 /* WorkoutResponse.swift in Sources */,
+				DF03D7F92B6558560093AD55 /* WorkoutInfoResponse.swift in Sources */,
 				DF03D7EA2B6557B50093AD55 /* WorkoutInteractor.swift in Sources */,
 				DF03D7F02B6557FD0093AD55 /* ListPresenter.swift in Sources */,
 				DF03D8042B665BF80093AD55 /* View+HostingController.swift in Sources */,

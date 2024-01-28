@@ -8,6 +8,10 @@
 import Foundation
 
 struct WorkoutResponse: Decodable {
+    let results: [WorkoutInfoResponse]
+}
+
+struct WorkoutInfoResponse: Decodable {
     let id: Int
     let name: String
     let uuid: String
@@ -21,7 +25,7 @@ struct ImageResponse: Decodable {
     let image: String
 }
 
-extension WorkoutResponse {
+extension WorkoutInfoResponse {
     var asEntity: WorkoutEntity {
         WorkoutEntity(
             id: id,
