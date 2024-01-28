@@ -10,9 +10,7 @@
 		DF03D7A62B654B100093AD55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D7A52B654B100093AD55 /* AppDelegate.swift */; };
 		DF03D7AF2B654B120093AD55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF03D7AE2B654B120093AD55 /* Assets.xcassets */; };
 		DF03D7B22B654B120093AD55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF03D7B02B654B120093AD55 /* LaunchScreen.storyboard */; };
-		DF03D7BD2B654B120093AD55 /* WorkoutBrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D7BC2B654B120093AD55 /* WorkoutBrowserTests.swift */; };
-		DF03D7C72B654B120093AD55 /* WorkoutBrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D7C62B654B120093AD55 /* WorkoutBrowserUITests.swift */; };
-		DF03D7C92B654B120093AD55 /* WorkoutBrowserUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D7C82B654B120093AD55 /* WorkoutBrowserUITestsLaunchTests.swift */; };
+		DF03D7BD2B654B120093AD55 /* WorkoutInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D7BC2B654B120093AD55 /* WorkoutInteractorTests.swift */; };
 		DF03D7D72B654B6B0093AD55 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = DF03D7D62B654B6B0093AD55 /* Lottie */; };
 		DF03D7D92B654BF10093AD55 /* Workout.json in Resources */ = {isa = PBXBuildFile; fileRef = DF03D7D82B654BF10093AD55 /* Workout.json */; };
 		DF03D7E32B6557290093AD55 /* Dumbbell.json in Resources */ = {isa = PBXBuildFile; fileRef = DF03D7E22B6557290093AD55 /* Dumbbell.json */; };
@@ -36,6 +34,15 @@
 		DF03D8162B66A5600093AD55 /* DetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF03D8152B66A5600093AD55 /* DetailViewController.storyboard */; };
 		DF03D8182B66A5C10093AD55 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D8172B66A5C10093AD55 /* DetailViewController.swift */; };
 		DF03D81B2B66B7070093AD55 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DF03D81A2B66B7070093AD55 /* Kingfisher */; };
+		DF03D81F2B66F52E0093AD55 /* ListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D81E2B66F52E0093AD55 /* ListPresenterTests.swift */; };
+		DF03D8212B66F5480093AD55 /* DetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D8202B66F5480093AD55 /* DetailPresenterTests.swift */; };
+		DF03D8232B66F5AA0093AD55 /* MockWorkoutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D8222B66F5AA0093AD55 /* MockWorkoutProvider.swift */; };
+		DF03D8252B66F5D00093AD55 /* MockWorkoutPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D8242B66F5D00093AD55 /* MockWorkoutPersistence.swift */; };
+		DF03D82A2B66F62B0093AD55 /* MockRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D8292B66F62B0093AD55 /* MockRouter.swift */; };
+		DF03D82C2B66F7570093AD55 /* MockWorkoutListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D82B2B66F7570093AD55 /* MockWorkoutListUseCase.swift */; };
+		DF03D82E2B66F7680093AD55 /* MockWorkoutDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D82D2B66F7680093AD55 /* MockWorkoutDetailUseCase.swift */; };
+		DF03D82F2B67060F0093AD55 /* WorkoutBrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D7C62B654B120093AD55 /* WorkoutBrowserUITests.swift */; };
+		DF03D8302B6706120093AD55 /* WorkoutBrowserUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D7C82B654B120093AD55 /* WorkoutBrowserUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +68,7 @@
 		DF03D7AE2B654B120093AD55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF03D7B12B654B120093AD55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF03D7B82B654B120093AD55 /* WorkoutBrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkoutBrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF03D7BC2B654B120093AD55 /* WorkoutBrowserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutBrowserTests.swift; sourceTree = "<group>"; };
+		DF03D7BC2B654B120093AD55 /* WorkoutInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutInteractorTests.swift; sourceTree = "<group>"; };
 		DF03D7C22B654B120093AD55 /* WorkoutBrowserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkoutBrowserUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF03D7C62B654B120093AD55 /* WorkoutBrowserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutBrowserUITests.swift; sourceTree = "<group>"; };
 		DF03D7C82B654B120093AD55 /* WorkoutBrowserUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutBrowserUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -87,6 +94,13 @@
 		DF03D8132B66785B0093AD55 /* String+HTML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+HTML.swift"; sourceTree = "<group>"; };
 		DF03D8152B66A5600093AD55 /* DetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailViewController.storyboard; sourceTree = "<group>"; };
 		DF03D8172B66A5C10093AD55 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		DF03D81E2B66F52E0093AD55 /* ListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenterTests.swift; sourceTree = "<group>"; };
+		DF03D8202B66F5480093AD55 /* DetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenterTests.swift; sourceTree = "<group>"; };
+		DF03D8222B66F5AA0093AD55 /* MockWorkoutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWorkoutProvider.swift; sourceTree = "<group>"; };
+		DF03D8242B66F5D00093AD55 /* MockWorkoutPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWorkoutPersistence.swift; sourceTree = "<group>"; };
+		DF03D8292B66F62B0093AD55 /* MockRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRouter.swift; sourceTree = "<group>"; };
+		DF03D82B2B66F7570093AD55 /* MockWorkoutListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWorkoutListUseCase.swift; sourceTree = "<group>"; };
+		DF03D82D2B66F7680093AD55 /* MockWorkoutDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWorkoutDetailUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +168,10 @@
 		DF03D7BB2B654B120093AD55 /* WorkoutBrowserTests */ = {
 			isa = PBXGroup;
 			children = (
-				DF03D7BC2B654B120093AD55 /* WorkoutBrowserTests.swift */,
+				DF03D8262B66F5D40093AD55 /* Mocks */,
+				DF03D8202B66F5480093AD55 /* DetailPresenterTests.swift */,
+				DF03D81E2B66F52E0093AD55 /* ListPresenterTests.swift */,
+				DF03D7BC2B654B120093AD55 /* WorkoutInteractorTests.swift */,
 			);
 			path = WorkoutBrowserTests;
 			sourceTree = "<group>";
@@ -263,6 +280,18 @@
 				DF03D8032B665BF80093AD55 /* View+HostingController.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DF03D8262B66F5D40093AD55 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				DF03D8292B66F62B0093AD55 /* MockRouter.swift */,
+				DF03D82D2B66F7680093AD55 /* MockWorkoutDetailUseCase.swift */,
+				DF03D82B2B66F7570093AD55 /* MockWorkoutListUseCase.swift */,
+				DF03D8242B66F5D00093AD55 /* MockWorkoutPersistence.swift */,
+				DF03D8222B66F5AA0093AD55 /* MockWorkoutProvider.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -432,7 +461,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF03D7BD2B654B120093AD55 /* WorkoutBrowserTests.swift in Sources */,
+				DF03D8252B66F5D00093AD55 /* MockWorkoutPersistence.swift in Sources */,
+				DF03D8232B66F5AA0093AD55 /* MockWorkoutProvider.swift in Sources */,
+				DF03D82E2B66F7680093AD55 /* MockWorkoutDetailUseCase.swift in Sources */,
+				DF03D8212B66F5480093AD55 /* DetailPresenterTests.swift in Sources */,
+				DF03D81F2B66F52E0093AD55 /* ListPresenterTests.swift in Sources */,
+				DF03D82A2B66F62B0093AD55 /* MockRouter.swift in Sources */,
+				DF03D82C2B66F7570093AD55 /* MockWorkoutListUseCase.swift in Sources */,
+				DF03D7BD2B654B120093AD55 /* WorkoutInteractorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,8 +476,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF03D7C72B654B120093AD55 /* WorkoutBrowserUITests.swift in Sources */,
-				DF03D7C92B654B120093AD55 /* WorkoutBrowserUITestsLaunchTests.swift in Sources */,
+				DF03D82F2B67060F0093AD55 /* WorkoutBrowserUITests.swift in Sources */,
+				DF03D8302B6706120093AD55 /* WorkoutBrowserUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,8 +639,8 @@
 				INFOPLIST_FILE = AppLayer/Assets/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -612,9 +648,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.young1park.WorkoutBrowser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -630,8 +669,8 @@
 				INFOPLIST_FILE = AppLayer/Assets/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -639,9 +678,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.young1park.WorkoutBrowser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -654,13 +696,16 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GRVLCPRP9Q;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.young1park.WorkoutBrowserTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WorkoutBrowser.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WorkoutBrowser";
 			};
 			name = Debug;
@@ -674,13 +719,16 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GRVLCPRP9Q;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.young1park.WorkoutBrowserTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WorkoutBrowser.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WorkoutBrowser";
 			};
 			name = Release;
@@ -696,9 +744,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.young1park.WorkoutBrowserUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_TARGET_NAME = WorkoutBrowser;
 			};
 			name = Debug;
@@ -714,9 +765,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.young1park.WorkoutBrowserUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_TARGET_NAME = WorkoutBrowser;
 			};
 			name = Release;

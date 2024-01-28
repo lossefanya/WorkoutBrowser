@@ -9,7 +9,7 @@ import UIKit
 import Combine
 import Kingfisher
 
-class DetailViewController: UITableViewController {
+final class DetailViewController: UITableViewController {
     private var cancellables: Set<AnyCancellable> = []
     private var presenter: DetailPresenter?
     func bind(presenter: DetailPresenter) {
