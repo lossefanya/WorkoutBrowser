@@ -8,5 +8,5 @@
 import Foundation
 
 protocol WorkoutListUseCase {
-    func loadWorkouts() async -> [Workout]
+    func loadWorkouts() async -> [WorkoutEntity]
 }

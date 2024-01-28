@@ -8,6 +8,6 @@
 import Foundation
 
 protocol WorkoutProvidable {
-    func loadWorkouts() async -> [Workout]
-    func loadWorkout(id: Int) async -> Workout
+    func loadWorkouts() async -> [WorkoutEntity]
+    func loadWorkout(id: Int) async -> WorkoutEntity
 }

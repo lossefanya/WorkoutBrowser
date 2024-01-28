@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct Workout: Codable {
+struct WorkoutEntity: Codable {
     
 }

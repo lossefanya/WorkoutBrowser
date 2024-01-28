@@ -8,6 +8,6 @@
 import Foundation
 
 protocol WorkoutPersistable {
-    func save(workouts: [Workout])
-    func load(id: Int) -> Workout
+    func save(workouts: [WorkoutEntity])
+    func load(id: Int) -> WorkoutEntity
 }

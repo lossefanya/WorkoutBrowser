@@ -18,13 +18,13 @@ final class WorkoutInteractor {
 }
 
 extension WorkoutInteractor: WorkoutListUseCase {
-    func loadWorkouts() async -> [Workout] {
+    func loadWorkouts() async -> [WorkoutEntity] {
         return []
     }
 }
 
 extension WorkoutInteractor: WorkoutDetailUseCase {
-    func loadWorkout(id: Int) async -> Workout {
-        return Workout()
+    func loadWorkout(id: Int) async -> WorkoutEntity {
+        return WorkoutEntity(id: 0, name: "", uuid: "", description: "", images: [], variations: [])
     }
 }

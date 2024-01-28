@@ -17,7 +17,7 @@
 		DF03D7D92B654BF10093AD55 /* Workout.json in Resources */ = {isa = PBXBuildFile; fileRef = DF03D7D82B654BF10093AD55 /* Workout.json */; };
 		DF03D7E32B6557290093AD55 /* Dumbbell.json in Resources */ = {isa = PBXBuildFile; fileRef = DF03D7E22B6557290093AD55 /* Dumbbell.json */; };
 		DF03D7E52B6557840093AD55 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D7E42B6557840093AD55 /* MainRouter.swift */; };
-		DF03D7E82B6557A70093AD55 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D7E72B6557A70093AD55 /* Workout.swift */; };
+		DF03D7E82B6557A70093AD55 /* WorkoutEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D7E72B6557A70093AD55 /* WorkoutEntity.swift */; };
 		DF03D7EA2B6557B50093AD55 /* WorkoutInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D7E92B6557B50093AD55 /* WorkoutInteractor.swift */; };
 		DF03D7EC2B6557C40093AD55 /* WorkoutListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D7EB2B6557C40093AD55 /* WorkoutListUseCase.swift */; };
 		DF03D7EE2B6557CF0093AD55 /* WorkoutDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D7ED2B6557CF0093AD55 /* WorkoutDetailUseCase.swift */; };
@@ -32,6 +32,8 @@
 		DF03D8012B657DAF0093AD55 /* DependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D8002B657DAF0093AD55 /* DependencyInjector.swift */; };
 		DF03D8042B665BF80093AD55 /* View+HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D8032B665BF80093AD55 /* View+HostingController.swift */; };
 		DF03D8062B665D350093AD55 /* Storyboard+Make.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D8052B665D350093AD55 /* Storyboard+Make.swift */; };
+		DF03D8122B6675040093AD55 /* Down in Frameworks */ = {isa = PBXBuildFile; productRef = DF03D8112B6675040093AD55 /* Down */; };
+		DF03D8142B66785C0093AD55 /* String+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D8132B66785B0093AD55 /* String+HTML.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +66,7 @@
 		DF03D7D82B654BF10093AD55 /* Workout.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Workout.json; sourceTree = "<group>"; };
 		DF03D7E22B6557290093AD55 /* Dumbbell.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Dumbbell.json; sourceTree = "<group>"; };
 		DF03D7E42B6557840093AD55 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
-		DF03D7E72B6557A70093AD55 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		DF03D7E72B6557A70093AD55 /* WorkoutEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutEntity.swift; sourceTree = "<group>"; };
 		DF03D7E92B6557B50093AD55 /* WorkoutInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutInteractor.swift; sourceTree = "<group>"; };
 		DF03D7EB2B6557C40093AD55 /* WorkoutListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListUseCase.swift; sourceTree = "<group>"; };
 		DF03D7ED2B6557CF0093AD55 /* WorkoutDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetailUseCase.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 		DF03D8032B665BF80093AD55 /* View+HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+HostingController.swift"; sourceTree = "<group>"; };
 		DF03D8052B665D350093AD55 /* Storyboard+Make.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard+Make.swift"; sourceTree = "<group>"; };
 		DF03D8072B6662740093AD55 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF03D8132B66785B0093AD55 /* String+HTML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+HTML.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF03D8122B6675040093AD55 /* Down in Frameworks */,
 				DF03D7D72B654B6B0093AD55 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,7 +229,7 @@
 		DF03D7E62B6557920093AD55 /* Workout */ = {
 			isa = PBXGroup;
 			children = (
-				DF03D7E72B6557A70093AD55 /* Workout.swift */,
+				DF03D7E72B6557A70093AD55 /* WorkoutEntity.swift */,
 				DF03D7ED2B6557CF0093AD55 /* WorkoutDetailUseCase.swift */,
 				DF03D7E92B6557B50093AD55 /* WorkoutInteractor.swift */,
 				DF03D7EB2B6557C40093AD55 /* WorkoutListUseCase.swift */,
@@ -241,6 +245,7 @@
 				DF03D7F62B65584B0093AD55 /* WorkoutProvider.swift */,
 				DF03D7F82B6558560093AD55 /* WorkoutResponse.swift */,
 				DF03D7FE2B657D940093AD55 /* WorkoutPersistence.swift */,
+				DF03D8132B66785B0093AD55 /* String+HTML.swift */,
 			);
 			path = Workout;
 			sourceTree = "<group>";
@@ -272,6 +277,7 @@
 			name = WorkoutBrowser;
 			packageProductDependencies = (
 				DF03D7D62B654B6B0093AD55 /* Lottie */,
+				DF03D8112B6675040093AD55 /* Down */,
 			);
 			productName = WorkoutBrowser;
 			productReference = DF03D7A22B654B100093AD55 /* WorkoutBrowser.app */;
@@ -347,6 +353,7 @@
 			mainGroup = DF03D7992B654B100093AD55;
 			packageReferences = (
 				DF03D7D52B654B6B0093AD55 /* XCRemoteSwiftPackageReference "lottie-spm" */,
+				DF03D8102B6675040093AD55 /* XCRemoteSwiftPackageReference "Down" */,
 			);
 			productRefGroup = DF03D7A32B654B100093AD55 /* Products */;
 			projectDirPath = "";
@@ -406,7 +413,8 @@
 				DF03D7EE2B6557CF0093AD55 /* WorkoutDetailUseCase.swift in Sources */,
 				DF03D7FB2B655A2A0093AD55 /* ListView.swift in Sources */,
 				DF03D7FD2B657D810093AD55 /* WorkoutPersistable.swift in Sources */,
-				DF03D7E82B6557A70093AD55 /* Workout.swift in Sources */,
+				DF03D7E82B6557A70093AD55 /* WorkoutEntity.swift in Sources */,
+				DF03D8142B66785C0093AD55 /* String+HTML.swift in Sources */,
 				DF03D8012B657DAF0093AD55 /* DependencyInjector.swift in Sources */,
 				DF03D7EC2B6557C40093AD55 /* WorkoutListUseCase.swift in Sources */,
 			);
@@ -755,6 +763,14 @@
 				version = 4.4.0;
 			};
 		};
+		DF03D8102B6675040093AD55 /* XCRemoteSwiftPackageReference "Down" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/johnxnguyen/Down";
+			requirement = {
+				kind = exactVersion;
+				version = 0.11.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -762,6 +778,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DF03D7D52B654B6B0093AD55 /* XCRemoteSwiftPackageReference "lottie-spm" */;
 			productName = Lottie;
+		};
+		DF03D8112B6675040093AD55 /* Down */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DF03D8102B6675040093AD55 /* XCRemoteSwiftPackageReference "Down" */;
+			productName = Down;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

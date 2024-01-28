@@ -6,3 +6,30 @@
 //
 
 import Foundation
+
+struct WorkoutResponse: Decodable {
+    let id: Int
+    let name: String
+    let uuid: String
+    let description: String
+    let images: [ImageResponse]
+    let variations: [Int]
+}
+
+struct ImageResponse: Decodable {
+    let id: Int
+    let image: String
+}
+
+extension WorkoutResponse {
+    var asEntity: WorkoutEntity {
+        WorkoutEntity(
+            id: id,
+            name: name,
+            uuid: uuid,
+            description: description.asAttributedString,
+            images: images.map { $0.image },
+            variations: variations
+        )
+    }
+}
