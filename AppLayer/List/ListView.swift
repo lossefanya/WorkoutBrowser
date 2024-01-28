@@ -46,6 +46,7 @@ struct ListView: View {
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(Color.gray, lineWidth: 1)
                 )
+                .contentShape(Rectangle())
                 .onTapGesture {
                     presenter.select(workout: workout)
                 }

@@ -26,12 +26,16 @@ struct ImageResponse: Decodable {
 }
 
 extension WorkoutInfoResponse {
+    var descWithDefault: String {
+        description.count == 0 ? "No Contents" : description
+    }
+    
     var asEntity: WorkoutEntity {
         WorkoutEntity(
             id: id,
             name: name,
             uuid: uuid,
-            description: description.asAttributedString,
+            description: descWithDefault.asAttributedString,
             images: images.map { $0.image },
             variations: variations
         )

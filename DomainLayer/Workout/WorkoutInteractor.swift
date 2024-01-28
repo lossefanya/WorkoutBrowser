@@ -19,12 +19,32 @@ actor WorkoutInteractor {
 
 extension WorkoutInteractor: WorkoutListUseCase {
     func loadWorkouts() async -> Result<[WorkoutEntity], Error> {
-        return await provider.loadWorkouts()
+        let result = await provider.loadWorkouts()
+        if case let .success(workouts) = result {
+            Task.detached {
+                await self.persistence.save(workouts: workouts)
+            }
+        }
+        return result
     }
 }
 
 extension WorkoutInteractor: WorkoutDetailUseCase {
     func loadWorkout(id: Int) async -> Result<WorkoutEntity, Error> {
-        return await provider.loadWorkout(id: id)
+        let result = await persistence.loadWorkout(id: id)
+        switch result {
+        case .success: return result
+        case .failure: return await loadWorkoutFromAPI(id: id)
+        }
+    }
+    
+    private func loadWorkoutFromAPI(id: Int) async -> Result<WorkoutEntity, Error> {
+        let result = await provider.loadWorkout(id: id)
+        if case let .success(workout) = result {
+            Task.detached {
+                await self.persistence.save(workouts: [workout])
+            }
+        }
+        return result
     }
 }

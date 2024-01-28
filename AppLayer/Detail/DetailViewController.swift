@@ -81,6 +81,17 @@ class DetailViewController: UITableViewController {
         let content = presenter.contents[section]
         return content.title
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard let presenter else {
+            return
+        }
+        let content = presenter.contents[indexPath.section]
+        if case let .variations(variations) = content {
+            presenter.show(variation: variations[indexPath.row])
+        }
+    }
 
 }
 

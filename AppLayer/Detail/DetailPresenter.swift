@@ -13,15 +13,18 @@ final class DetailPresenter {
         case images([String])
         case variations([WorkoutEntity])
     }
+    
+    let workout: WorkoutEntity
     let isVariation: Bool
     let useCase: WorkoutDetailUseCase
-    let workout: WorkoutEntity
+    private weak var router: DetailRoutable?
     @Published var contents: [Content] = []
     
-    init(workout: WorkoutEntity, isVariation: Bool = false, useCase: WorkoutDetailUseCase) {
+    init(workout: WorkoutEntity, isVariation: Bool = false, useCase: WorkoutDetailUseCase, router: DetailRoutable? = nil) {
         self.workout = workout
         self.isVariation = isVariation
         self.useCase = useCase
+        self.router = router
         
         var contents: [Content] = [.description(workout.description)]
         if workout.images.count > 0 {
@@ -34,7 +37,7 @@ final class DetailPresenter {
         }
     }
     
-    func loadVariations() {
+    private func loadVariations() {
         Task {
             var variations: [WorkoutEntity] = []
             for id in workout.variations {
@@ -46,6 +49,10 @@ final class DetailPresenter {
             
             contents = contents + [.variations(variations)]
         }
+    }
+    
+    func show(variation: WorkoutEntity) {
+        router?.showDetail(for: variation, isVariation: true)
     }
 }
 

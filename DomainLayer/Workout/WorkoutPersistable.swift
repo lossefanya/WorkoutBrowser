@@ -9,5 +9,9 @@ import Foundation
 
 protocol WorkoutPersistable {
     func save(workouts: [WorkoutEntity]) async -> Result<Void, Error>
-    func load(id: Int) async -> Result<WorkoutEntity, Error>
+    func loadWorkout(id: Int) async -> Result<WorkoutEntity, Error>
+}
+
+enum WorkoutPersistableError: Error {
+    case notFound
 }

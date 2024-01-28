@@ -46,7 +46,7 @@ extension MainRouter: DetailRoutable {
             assertionFailure("DEV: Please check DetailViewController storyboard")
             return
         }
-        let presenter = DetailPresenter(workout: workout, isVariation: isVariation, useCase: useCase)
+        let presenter = DetailPresenter(workout: workout, isVariation: isVariation, useCase: useCase, router: self)
         view.bind(presenter: presenter)
         navigation.pushViewController(view, animated: true)
     }
