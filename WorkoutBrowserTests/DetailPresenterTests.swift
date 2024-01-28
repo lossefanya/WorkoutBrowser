@@ -16,7 +16,6 @@ final class DetailPresenterTests: XCTestCase {
     override func setUpWithError() throws {
         mockUseCase = MockWorkoutDetailUseCase()
         mockRouter = MockRouter()
-//        sut = DetailPresenter(workout: <#T##WorkoutEntity#>, isVariation: <#T##Bool#>, useCase: <#T##WorkoutDetailUseCase#>, router: <#T##DetailRoutable?#>)
     }
 
     override func tearDownWithError() throws {
@@ -64,4 +63,42 @@ final class DetailPresenterTests: XCTestCase {
         XCTAssertTrue(mockUseCase.loadWorkoutCallCount == 2)
     }
 
+    func testWhenItsVariation_ThenItShouldHaveSomeContents() throws {
+        // Given
+        let workout = WorkoutEntity(
+            id: 78,
+            name: "Some",
+            uuid: UUID().uuidString,
+            description: "",
+            images: ["someUrl", "anotherUrl"],
+            variations: [123, 456]
+        )
+        let variation = WorkoutEntity(
+            id: 123,
+            name: "Some",
+            uuid: UUID().uuidString,
+            description: "",
+            images: ["someUrl", "anotherUrl"],
+            variations: [78, 456]
+        )
+        mockUseCase.expectedResult = .success(variation)
+        
+        // When
+        sut = DetailPresenter(
+            workout: workout,
+            isVariation: true,
+            useCase: mockUseCase,
+            router: mockRouter
+        )
+        
+        let exp = expectation(description: "callingAPI")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            exp.fulfill()
+        }
+        wait(for: [exp], timeout: 0.1)
+        
+        // Then
+        XCTAssertTrue(sut.contents.count == 2)
+        XCTAssertTrue(mockUseCase.loadWorkoutCallCount == 0)
+    }
 }

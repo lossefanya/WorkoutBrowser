@@ -41,19 +41,10 @@
 		DF03D82A2B66F62B0093AD55 /* MockRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D8292B66F62B0093AD55 /* MockRouter.swift */; };
 		DF03D82C2B66F7570093AD55 /* MockWorkoutListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D82B2B66F7570093AD55 /* MockWorkoutListUseCase.swift */; };
 		DF03D82E2B66F7680093AD55 /* MockWorkoutDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D82D2B66F7680093AD55 /* MockWorkoutDetailUseCase.swift */; };
-		DF03D82F2B67060F0093AD55 /* WorkoutBrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D7C62B654B120093AD55 /* WorkoutBrowserUITests.swift */; };
-		DF03D8302B6706120093AD55 /* WorkoutBrowserUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03D7C82B654B120093AD55 /* WorkoutBrowserUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		DF03D7B92B654B120093AD55 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF03D79A2B654B100093AD55 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DF03D7A12B654B100093AD55;
-			remoteInfo = WorkoutBrowser;
-		};
-		DF03D7C32B654B120093AD55 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DF03D79A2B654B100093AD55 /* Project object */;
 			proxyType = 1;
@@ -69,7 +60,6 @@
 		DF03D7B12B654B120093AD55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF03D7B82B654B120093AD55 /* WorkoutBrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkoutBrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF03D7BC2B654B120093AD55 /* WorkoutInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutInteractorTests.swift; sourceTree = "<group>"; };
-		DF03D7C22B654B120093AD55 /* WorkoutBrowserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkoutBrowserUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF03D7C62B654B120093AD55 /* WorkoutBrowserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutBrowserUITests.swift; sourceTree = "<group>"; };
 		DF03D7C82B654B120093AD55 /* WorkoutBrowserUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutBrowserUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DF03D7D82B654BF10093AD55 /* Workout.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Workout.json; sourceTree = "<group>"; };
@@ -120,13 +110,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DF03D7BF2B654B120093AD55 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -147,7 +130,6 @@
 			children = (
 				DF03D7A22B654B100093AD55 /* WorkoutBrowser.app */,
 				DF03D7B82B654B120093AD55 /* WorkoutBrowserTests.xctest */,
-				DF03D7C22B654B120093AD55 /* WorkoutBrowserUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -336,24 +318,6 @@
 			productReference = DF03D7B82B654B120093AD55 /* WorkoutBrowserTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		DF03D7C12B654B120093AD55 /* WorkoutBrowserUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DF03D7D22B654B120093AD55 /* Build configuration list for PBXNativeTarget "WorkoutBrowserUITests" */;
-			buildPhases = (
-				DF03D7BE2B654B120093AD55 /* Sources */,
-				DF03D7BF2B654B120093AD55 /* Frameworks */,
-				DF03D7C02B654B120093AD55 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DF03D7C42B654B120093AD55 /* PBXTargetDependency */,
-			);
-			name = WorkoutBrowserUITests;
-			productName = WorkoutBrowserUITests;
-			productReference = DF03D7C22B654B120093AD55 /* WorkoutBrowserUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -368,10 +332,6 @@
 						CreatedOnToolsVersion = 15.0;
 					};
 					DF03D7B72B654B120093AD55 = {
-						CreatedOnToolsVersion = 15.0;
-						TestTargetID = DF03D7A12B654B100093AD55;
-					};
-					DF03D7C12B654B120093AD55 = {
 						CreatedOnToolsVersion = 15.0;
 						TestTargetID = DF03D7A12B654B100093AD55;
 					};
@@ -396,7 +356,6 @@
 			targets = (
 				DF03D7A12B654B100093AD55 /* WorkoutBrowser */,
 				DF03D7B72B654B120093AD55 /* WorkoutBrowserTests */,
-				DF03D7C12B654B120093AD55 /* WorkoutBrowserUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -415,13 +374,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		DF03D7B62B654B120093AD55 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DF03D7C02B654B120093AD55 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -472,15 +424,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DF03D7BE2B654B120093AD55 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DF03D82F2B67060F0093AD55 /* WorkoutBrowserUITests.swift in Sources */,
-				DF03D8302B6706120093AD55 /* WorkoutBrowserUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -488,11 +431,6 @@
 			isa = PBXTargetDependency;
 			target = DF03D7A12B654B100093AD55 /* WorkoutBrowser */;
 			targetProxy = DF03D7B92B654B120093AD55 /* PBXContainerItemProxy */;
-		};
-		DF03D7C42B654B120093AD55 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DF03D7A12B654B100093AD55 /* WorkoutBrowser */;
-			targetProxy = DF03D7C32B654B120093AD55 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -733,48 +671,6 @@
 			};
 			name = Release;
 		};
-		DF03D7D32B654B120093AD55 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GRVLCPRP9Q;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.young1park.WorkoutBrowserUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				TEST_TARGET_NAME = WorkoutBrowser;
-			};
-			name = Debug;
-		};
-		DF03D7D42B654B120093AD55 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GRVLCPRP9Q;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.young1park.WorkoutBrowserUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				TEST_TARGET_NAME = WorkoutBrowser;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -801,15 +697,6 @@
 			buildConfigurations = (
 				DF03D7D02B654B120093AD55 /* Debug */,
 				DF03D7D12B654B120093AD55 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DF03D7D22B654B120093AD55 /* Build configuration list for PBXNativeTarget "WorkoutBrowserUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DF03D7D32B654B120093AD55 /* Debug */,
-				DF03D7D42B654B120093AD55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
