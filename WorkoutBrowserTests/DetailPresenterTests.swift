@@ -53,14 +53,14 @@ final class DetailPresenterTests: XCTestCase {
         )
         
         let exp = expectation(description: "callingAPI")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             exp.fulfill()
         }
-        wait(for: [exp], timeout: 0.1)
+        wait(for: [exp], timeout: 0.5)
         
         // Then
-        XCTAssertTrue(sut.contents.count == 3)
-        XCTAssertTrue(mockUseCase.loadWorkoutCallCount == 2)
+        XCTAssertEqual(sut.contents.count, 3)
+        XCTAssertEqual(mockUseCase.loadWorkoutCallCount, 2)
     }
 
     func testWhenItsVariation_ThenItShouldHaveSomeContents() throws {
@@ -92,13 +92,13 @@ final class DetailPresenterTests: XCTestCase {
         )
         
         let exp = expectation(description: "callingAPI")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             exp.fulfill()
         }
-        wait(for: [exp], timeout: 0.1)
+        wait(for: [exp], timeout: 0.5)
         
         // Then
-        XCTAssertTrue(sut.contents.count == 2)
-        XCTAssertTrue(mockUseCase.loadWorkoutCallCount == 0)
+        XCTAssertEqual(sut.contents.count, 2)
+        XCTAssertEqual(mockUseCase.loadWorkoutCallCount, 0)
     }
 }

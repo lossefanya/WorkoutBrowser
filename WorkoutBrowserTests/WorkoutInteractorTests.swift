@@ -9,20 +9,94 @@ import XCTest
 @testable import WorkoutBrowser
 
 final class WorkoutInteractorTests: XCTestCase {
+    var mockProvider: MockWorkoutProvider!
+    var mockPersistence: MockWorkoutPersistence!
+    var sut: WorkoutInteractor!
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        mockProvider = MockWorkoutProvider()
+        mockPersistence = MockWorkoutPersistence()
+        sut = WorkoutInteractor(provider: mockProvider, persistence: mockPersistence)
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        mockProvider = nil
+        mockPersistence = nil
+        sut = nil
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testWhenNoCache_ThenItShouldFetchFromAPI() throws {
+        // Given
+        let workout = WorkoutEntity(
+            id: 78,
+            name: "Some",
+            uuid: UUID().uuidString,
+            description: "",
+            images: ["someUrl", "anotherUrl"],
+            variations: [123, 456]
+        )
+        mockProvider.expectedLoadWorkousResult = .success(workout)
+        mockPersistence.expectedLoadWorkoutResult = .failure(WorkoutPersistableError.notFound)
+        mockPersistence.expectedSaveResult = .success(())
+        
+        let expectation = XCTestExpectation(description: "Async/await function should complete")
+        Task {
+            // When
+            let result = await sut.loadWorkout(id: 78)
+            
+            guard case let .success(workout) = result else {
+                XCTFail("Should have result")
+                return
+            }
+            
+            // save is detached thread
+            try? await Task.sleep(nanoseconds: 1_000_000_000 / 2)
+            
+            // Then
+            XCTAssertEqual(workout.id, 78)
+            XCTAssertEqual(mockPersistence.loadWorkoutCallCount, 1)
+            XCTAssertEqual(mockProvider.loadWorkoutCallCount, 1)
+            XCTAssertEqual(mockPersistence.saveCallCount, 1)
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 0.6)
+    }
+    
+    func testWhenLoadingList_ThenItShouldNotUseCache() throws {
+        let workout = WorkoutEntity(
+            id: 78,
+            name: "Some",
+            uuid: UUID().uuidString,
+            description: "",
+            images: ["someUrl", "anotherUrl"],
+            variations: [123, 456]
+        )
+        mockProvider.expectedLoadWorkoutsResult = .success([workout])
+        mockPersistence.expectedLoadWorkoutResult = .failure(WorkoutPersistableError.notFound)
+        mockPersistence.expectedSaveResult = .success(())
+        
+        let expectation = XCTestExpectation(description: "Async/await function should complete")
+        Task {
+            // When
+            let result = await sut.loadWorkouts()
+            
+            guard case let .success(workouts) = result else {
+                XCTFail("Should have result")
+                return
+            }
+            
+            // save is detached thread
+            try? await Task.sleep(nanoseconds: 1_000_000_000 / 2)
+            
+            // Then
+            XCTAssertEqual(workouts.count, 1)
+            XCTAssertEqual(mockProvider.loadWorkoutsCallCount, 1)
+            XCTAssertEqual(mockPersistence.loadWorkoutCallCount, 0)
+            XCTAssertEqual(mockPersistence.saveCallCount, 1)
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 0.6)
     }
 }

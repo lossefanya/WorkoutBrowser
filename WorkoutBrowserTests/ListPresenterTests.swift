@@ -49,13 +49,13 @@ final class ListPresenterTests: XCTestCase {
         sut.loadWorkouts()
         
         let exp = expectation(description: "callingAPI")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.1) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.3) {
             exp.fulfill()
         }
-        wait(for: [exp], timeout: 1.1)
+        wait(for: [exp], timeout: 1.5)
         
         // Then
-        XCTAssertTrue(sut.workouts.count == 2)
-        XCTAssertTrue(mockUseCase.loadWorkoutsCallCount == 1)
+        XCTAssertEqual(sut.workouts.count, 2)
+        XCTAssertEqual(mockUseCase.loadWorkoutsCallCount, 1)
     }
 }
