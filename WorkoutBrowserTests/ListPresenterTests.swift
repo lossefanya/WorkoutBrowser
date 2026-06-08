@@ -8,6 +8,10 @@
 import XCTest
 @testable import WorkoutBrowser
 
+private enum ListPresenterTestError: Error {
+    case sample
+}
+
 final class ListPresenterTests: XCTestCase {
     var sut: ListPresenter!
     var mockUseCase: MockWorkoutListUseCase!
@@ -57,5 +61,47 @@ final class ListPresenterTests: XCTestCase {
         // Then
         XCTAssertEqual(sut.workouts.count, 2)
         XCTAssertEqual(mockUseCase.loadWorkoutsCallCount, 1)
+    }
+
+    func testWhenLoadFails_ThenItShouldKeepExistingState() throws {
+        let existingWorkout = WorkoutEntity(
+            id: 78,
+            name: "Existing",
+            uuid: UUID().uuidString,
+            description: "",
+            images: [],
+            variations: []
+        )
+        sut = ListPresenter(isLoading: true, workouts: [existingWorkout], listUseCase: mockUseCase, router: mockRouter)
+        mockUseCase.expectedResult = .failure(ListPresenterTestError.sample)
+
+        sut.loadWorkouts()
+
+        let exp = expectation(description: "callingAPI")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.3) {
+            exp.fulfill()
+        }
+        wait(for: [exp], timeout: 1.5)
+
+        XCTAssertEqual(sut.workouts.count, 1)
+        XCTAssertEqual(sut.workouts.first?.name, "Existing")
+        XCTAssertTrue(sut.isLoading)
+        XCTAssertEqual(mockUseCase.loadWorkoutsCallCount, 1)
+    }
+
+    func testWhenSelectingWorkout_ThenItShouldRouteToDetail() throws {
+        let workout = WorkoutEntity(
+            id: 78,
+            name: "Some",
+            uuid: UUID().uuidString,
+            description: "",
+            images: [],
+            variations: []
+        )
+
+        sut.select(workout: workout)
+
+        XCTAssertEqual(mockRouter.showDetailCallCount, 1)
+        XCTAssertFalse(mockRouter.isVariationValue)
     }
 }

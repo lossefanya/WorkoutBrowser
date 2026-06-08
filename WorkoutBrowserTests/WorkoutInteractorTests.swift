@@ -8,6 +8,10 @@
 import XCTest
 @testable import WorkoutBrowser
 
+private enum TestError: Error {
+    case sample
+}
+
 final class WorkoutInteractorTests: XCTestCase {
     var mockProvider: MockWorkoutProvider!
     var mockPersistence: MockWorkoutPersistence!
@@ -133,6 +137,83 @@ final class WorkoutInteractorTests: XCTestCase {
             XCTAssertEqual(workout.name, "Fresh")
             XCTAssertEqual(mockProvider.loadWorkoutCallCount, 1)
             XCTAssertEqual(mockPersistence.loadWorkoutCallCount, 0)
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: 0.6)
+    }
+
+    func testWhenLoadingListFails_ThenItShouldReturnFailureAndNotSave() throws {
+        mockProvider.expectedLoadWorkoutsResult = .failure(TestError.sample)
+        mockPersistence.expectedSaveResult = .success(())
+
+        let expectation = XCTestExpectation(description: "Async/await function should complete")
+        Task {
+            let result = await sut.loadWorkouts()
+
+            guard case .failure = result else {
+                XCTFail("Should have failure")
+                return
+            }
+
+            XCTAssertEqual(mockProvider.loadWorkoutsCallCount, 1)
+            XCTAssertEqual(mockPersistence.saveCallCount, 0)
+            XCTAssertEqual(mockPersistence.loadWorkoutCallCount, 0)
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: 0.6)
+    }
+
+    func testWhenAPIFailsAndCacheExists_ThenItShouldReturnCachedWorkout() throws {
+        let cachedWorkout = WorkoutEntity(
+            id: 78,
+            name: "Cached",
+            uuid: UUID().uuidString,
+            description: "",
+            images: ["cachedUrl"],
+            variations: [456]
+        )
+        mockProvider.expectedLoadWorkousResult = .failure(TestError.sample)
+        mockPersistence.expectedLoadWorkoutResult = .success(cachedWorkout)
+        mockPersistence.expectedSaveResult = .success(())
+
+        let expectation = XCTestExpectation(description: "Async/await function should complete")
+        Task {
+            let result = await sut.loadWorkout(id: 78)
+
+            guard case let .success(workout) = result else {
+                XCTFail("Should have cached result")
+                return
+            }
+
+            XCTAssertEqual(workout.name, "Cached")
+            XCTAssertEqual(mockProvider.loadWorkoutCallCount, 1)
+            XCTAssertEqual(mockPersistence.loadWorkoutCallCount, 1)
+            XCTAssertEqual(mockPersistence.saveCallCount, 0)
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: 0.6)
+    }
+
+    func testWhenAPIFailsAndCacheMissing_ThenItShouldReturnFailure() throws {
+        mockProvider.expectedLoadWorkousResult = .failure(TestError.sample)
+        mockPersistence.expectedLoadWorkoutResult = .failure(WorkoutPersistableError.notFound)
+        mockPersistence.expectedSaveResult = .success(())
+
+        let expectation = XCTestExpectation(description: "Async/await function should complete")
+        Task {
+            let result = await sut.loadWorkout(id: 78)
+
+            guard case .failure = result else {
+                XCTFail("Should have failure")
+                return
+            }
+
+            XCTAssertEqual(mockProvider.loadWorkoutCallCount, 1)
+            XCTAssertEqual(mockPersistence.loadWorkoutCallCount, 1)
+            XCTAssertEqual(mockPersistence.saveCallCount, 0)
             expectation.fulfill()
         }
 
