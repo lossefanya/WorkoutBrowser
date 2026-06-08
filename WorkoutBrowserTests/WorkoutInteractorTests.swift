@@ -54,7 +54,7 @@ final class WorkoutInteractorTests: XCTestCase {
             
             // Then
             XCTAssertEqual(workout.id, 78)
-            XCTAssertEqual(mockPersistence.loadWorkoutCallCount, 1)
+            XCTAssertEqual(mockPersistence.loadWorkoutCallCount, 0)
             XCTAssertEqual(mockProvider.loadWorkoutCallCount, 1)
             XCTAssertEqual(mockPersistence.saveCallCount, 1)
             expectation.fulfill()
@@ -97,6 +97,45 @@ final class WorkoutInteractorTests: XCTestCase {
             expectation.fulfill()
         }
         
+        wait(for: [expectation], timeout: 0.6)
+    }
+
+    func testWhenCacheExists_ThenItShouldPreferFreshAPIData() throws {
+        let cachedWorkout = WorkoutEntity(
+            id: 78,
+            name: "Cached",
+            uuid: UUID().uuidString,
+            description: "",
+            images: [],
+            variations: []
+        )
+        let freshWorkout = WorkoutEntity(
+            id: 78,
+            name: "Fresh",
+            uuid: UUID().uuidString,
+            description: "",
+            images: ["someUrl"],
+            variations: [123]
+        )
+        mockProvider.expectedLoadWorkousResult = .success(freshWorkout)
+        mockPersistence.expectedLoadWorkoutResult = .success(cachedWorkout)
+        mockPersistence.expectedSaveResult = .success(())
+
+        let expectation = XCTestExpectation(description: "Async/await function should complete")
+        Task {
+            let result = await sut.loadWorkout(id: 78)
+
+            guard case let .success(workout) = result else {
+                XCTFail("Should have result")
+                return
+            }
+
+            XCTAssertEqual(workout.name, "Fresh")
+            XCTAssertEqual(mockProvider.loadWorkoutCallCount, 1)
+            XCTAssertEqual(mockPersistence.loadWorkoutCallCount, 0)
+            expectation.fulfill()
+        }
+
         wait(for: [expectation], timeout: 0.6)
     }
 }

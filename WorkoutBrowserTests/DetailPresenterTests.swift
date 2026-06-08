@@ -34,15 +34,7 @@ final class DetailPresenterTests: XCTestCase {
             images: ["someUrl", "anotherUrl"],
             variations: [123, 456]
         )
-        let variation = WorkoutEntity(
-            id: 123,
-            name: "Some",
-            uuid: UUID().uuidString,
-            description: "",
-            images: ["someUrl", "anotherUrl"],
-            variations: [78, 456]
-        )
-        mockUseCase.expectedResult = .success(variation)
+        mockUseCase.expectedResult = .success(workout)
         
         // When
         sut = DetailPresenter(
@@ -60,7 +52,7 @@ final class DetailPresenterTests: XCTestCase {
         
         // Then
         XCTAssertEqual(sut.contents.count, 3)
-        XCTAssertEqual(mockUseCase.loadWorkoutCallCount, 2)
+        XCTAssertEqual(mockUseCase.loadWorkoutCallCount, 3)
     }
 
     func testWhenItsVariation_ThenItShouldHaveSomeContents() throws {

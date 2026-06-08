@@ -31,10 +31,12 @@ extension WorkoutInteractor: WorkoutListUseCase {
 
 extension WorkoutInteractor: WorkoutDetailUseCase {
     func loadWorkout(id: Int) async -> Result<WorkoutEntity, Error> {
-        let result = await persistence.loadWorkout(id: id)
+        let result = await loadWorkoutFromAPI(id: id)
         switch result {
-        case .success: return result
-        case .failure: return await loadWorkoutFromAPI(id: id)
+        case .success:
+            return result
+        case .failure:
+            return await persistence.loadWorkout(id: id)
         }
     }
     

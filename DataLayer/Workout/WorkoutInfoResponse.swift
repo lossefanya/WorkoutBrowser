@@ -13,11 +13,18 @@ struct WorkoutResponse: Decodable {
 
 struct WorkoutInfoResponse: Decodable {
     let id: Int
-    let name: String
     let uuid: String
-    let description: String
     let images: [ImageResponse]
-    let variations: [Int]
+    let translations: [TranslationResponse]
+    let variationGroup: String?
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case uuid
+        case images
+        case translations
+        case variationGroup = "variation_group"
+    }
 }
 
 struct ImageResponse: Decodable {
@@ -25,15 +32,36 @@ struct ImageResponse: Decodable {
     let image: String
 }
 
+struct TranslationResponse: Decodable {
+    let name: String
+    let description: String?
+}
+
 extension WorkoutInfoResponse {
-    var descWithDefault: String {
-        description.count == 0 ? "No Contents" : description
+    private var preferredTranslation: TranslationResponse? {
+        translations.first(where: { !$0.name.isEmpty || !($0.description ?? "").isEmpty })
     }
-    
-    var asEntity: WorkoutEntity {
+
+    var nameWithDefault: String {
+        guard let name = preferredTranslation?.name, !name.isEmpty else {
+            return "Unknown Workout"
+        }
+
+        return name
+    }
+
+    var descWithDefault: String {
+        guard let description = preferredTranslation?.description, !description.isEmpty else {
+            return "No Contents"
+        }
+
+        return description
+    }
+
+    func asEntity(variations: [Int] = []) -> WorkoutEntity {
         WorkoutEntity(
             id: id,
-            name: name,
+            name: nameWithDefault,
             uuid: uuid,
             description: descWithDefault.asAttributedString,
             images: images.map { $0.image },
